@@ -34,7 +34,11 @@ function App() {
           </div>
         </div>
       </div>
-      <div>main-1</div>
+      <div className='banner'>
+        <a className='banner-img1'><img></img></a>
+        <a className='banner-img2'><img></img></a>
+        <a className='banner-img3'><img></img></a>
+      </div>
       <div>WHAT’S BREWING</div>
       <div>ONLINE STORE</div>
       <div>Starbucks stories</div>

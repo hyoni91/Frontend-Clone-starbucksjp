@@ -30,6 +30,12 @@ button{
     background-color: #ffffff;
     font-size: 0.9em;
     font-family: noto_sansJP;
+
+    align-items: center;
+    padding-left: 40px;
+    position: relative;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+    z-index: 999998;
 }
 
 .header > span >img{
@@ -87,3 +93,36 @@ button{
     height: 100%;
     border-left: 1px solid lightgray;
 }
+
+.banner{
+    width: 100%;
+    gap: 8px;
+    display: grid;
+    grid-template-columns: calc(50vw - 4px) calc(50vw - 4px);
+    grid-template-rows: repeat(2, calc(25vw - 6px));
+    background-color: #edebe9;  
+}
+
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.banner-img1{
+    grid-row: 1 / -1;
+}
+
+
+.banner__img {
+    position: relative;
+}
+
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
