@@ -1,0 +1,19 @@
+
+@media screen and (min-width: 1024px){
+.brew-products{
+    background-color: unset;
+    padding-top: 78px;
+    padding-bottom: 80px;
+}
+
+.brew-products > h2{
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 2rem;
+    margin-bottom: 56px;
+    word-spacing: 1rem;
+    line-height: 2.1rem;
+}
+
+}
+
+

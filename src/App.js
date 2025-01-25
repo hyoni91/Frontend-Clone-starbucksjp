@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import BrewProducts from './BrewProducts';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
         <a className='banner-img2'><img></img></a>
         <a className='banner-img3'><img></img></a>
       </div>
-      <div>WHAT’S BREWING</div>
+      <BrewProducts />
       <div>ONLINE STORE</div>
       <div>Starbucks stories</div>
       <div>osirase</div>
