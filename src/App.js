@@ -36,9 +36,9 @@ function App() {
         </div>
       </div>
       <div className='banner'>
-        <a className='banner-img1'><img></img></a>
-        <a className='banner-img2'><img></img></a>
-        <a className='banner-img3'><img></img></a>
+        <a className='banner-img1'><img src='https://www.starbucks.co.jp/resource/kv/images/kv_250124_0600_a_pc.jpg'/></a>
+        <a className='banner-img2'><img src='https://www.starbucks.co.jp/resource/kv/images/kv_250115_0600_b_pc.jpg'/></a>
+        <a className='banner-img3'><img src='https://www.starbucks.co.jp/resource/kv/images/kv_250115_0600_c_pc.jpg' /></a>
       </div>
       <BrewProducts />
       <div>ONLINE STORE</div>
