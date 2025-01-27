@@ -5,20 +5,56 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 const BrewProducts = () => {
-    // const [display, setDisplay] = useState(true);
-    // const [width, setWidth] = useState(1250);
+
+    const [url, setUrl] = useState([
+        {
+            urlName : 'https://asset.menu.starbucks.co.jp/public/sku_images/4524785584440/4524785584440_1_s.jpg',
+            content : "[新商品情報] ルビー ショコラ シンフォニー フラペチーノ®\n\n2025.01.24"
+        },
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/23fall2_seasonal_wb.jpg',
+            content:'季節のおすすめ商品はこちら。',
+        },
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_porter_wb.jpg',
+            content:'弾。2つのクラフトマンシップが再び出会い、こだわり溢れるアイテムが登場します。',
+        },
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_egift_wb.jpg',
+            content:"[Enjoy Valentines Days eGift バレンタインまでの毎日、大切な人にeGiftを贈って楽しみませんか。",
+        }, 
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_cafe_wb.jpg',
+            content:'[新商品情報] クラシック ショコラ シンフォニー フラペチーノ®',
+        }, 
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_gift_wb.jpg',
+            content:'[バレンタインギフト特集] 選ぶ時間も渡す瞬間もずっとワクワクが続く、スターバックスのバレンタインギフトをお楽しみください。',
+        }, 
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_name-engraving_wb.jpg',
+            content:'あなたの気持ちを刻印メッセージで届ける、オンリーワンのバレンタインデーギフトを贈りませんか。',
+        }, 
+        {
+            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_hellocoffee_wb.jpg',
+            content:'コアコーヒー4種類に100gサイズのコーヒー(粉)が登場',
+        }, 
+    ])
 
     const settings = {
         dots: false,
         infinite: true,
+        arrows: true,
+        centerMode: true, // 슬라이더 카드 간 여백 활성화
+        centerPadding: "10px", // 카드 간 간격 설정
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         responsive: [
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 5,
                 slidesToScroll: 3,
                 infinite: true,
                 dots: true
@@ -27,7 +63,7 @@ const BrewProducts = () => {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 4,
                 slidesToScroll: 2,
                 initialSlide: 2
               }
@@ -46,78 +82,31 @@ const BrewProducts = () => {
         
         <div className='brew-products'>
             <h2>WHAT'S BREWING</h2>
-            <Slider {...settings}>
-                <div className="card" style={{width: '13rem'}}>
-                    <img src='https://asset.menu.starbucks.co.jp/public/sku_images/4524785584440/4524785584440_1_s.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div className="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_gift_wb.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            <div className="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/23fall2_seasonal_wb.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+            <Slider {...settings} className='slider-wrap'>
+                {
+                    url.map((url,i)=>{
+                        return(
+                            <div className="card" >
+                                <img src={url.urlName} class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">{url.content}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
                 
-                <div classna="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_name-engraving_wb.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+            </Slider>   
+            <div className='brew-banner-div'>
+                <div>
+                    <img src='https://www.starbucks.co.jp/top/images/info/img-bottom-1.jpg' alt='mini-banner1'/>
+                    <div>いつもの一杯を、キャッシュレスで</div>
                 </div>
-                <div class="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_hellocoffee_wb.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+                <div>
+                    <img src='https://www.starbucks.co.jp/top/images/info/img-bottom-4.jpg' alt='mini-banner2'/>
+                    <div>[アルバイト情報] あなたもバリスタとして働いてみませんか</div>
                 </div>
-                <div class="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter1_Win2MD_wb.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Win2_OSLIVE.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card" style={{width: '13rem'}}>
-                    <img src='https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter1_reserveWB_wb.jpg' class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>              
-            </Slider>
-            
-
-                        
- 
-                
-                
+            </div>             
             </div>
     );
 };
