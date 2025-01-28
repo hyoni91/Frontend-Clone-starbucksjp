@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import './BrewProducts.css';
+import './Stories.css'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const BrewProducts = () => {
-
+const Stories = () => {
     const [url, setUrl] = useState([
         {
             urlName : 'https://asset.menu.starbucks.co.jp/public/sku_images/4524785584440/4524785584440_1_s.jpg',
@@ -79,9 +78,9 @@ const BrewProducts = () => {
     };
 
     return (
-        
-        <div className='brew-products'>
-            <h2>WHAT'S BREWING</h2>
+        <div>
+            <div>Stories</div>
+            <div>link</div>
             <Slider {...settings} className='slider-wrap'>
                 {
                     url.map((url,i)=>{
@@ -97,18 +96,8 @@ const BrewProducts = () => {
                 }
                 
             </Slider>   
-            <div className='brew-banner-div'>
-                <div>
-                    <img src='https://www.starbucks.co.jp/top/images/info/img-bottom-1.jpg' alt='mini-banner1'/>
-                    <div>いつもの一杯を、キャッシュレスで</div>
-                </div>
-                <div>
-                    <img src='https://www.starbucks.co.jp/top/images/info/img-bottom-4.jpg' alt='mini-banner2'/>
-                    <div>[アルバイト情報] あなたもバリスタとして働いてみませんか</div>
-                </div>
-            </div>             
-            </div>
+        </div>
     );
 };
 
-export default BrewProducts;
+export default Stories;

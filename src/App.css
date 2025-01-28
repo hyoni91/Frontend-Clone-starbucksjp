@@ -5,7 +5,7 @@ html, body {
     box-sizing: border-box;
     width: 100vw;
     height: auto;
-    background-color: #EDEBE9;
+    background-color: white;
 
   }
 
@@ -94,7 +94,17 @@ button{
     border-left: 1px solid lightgray;
 }
 
+.dropDown{
+    position:absolute;
+    z-index: 10000;
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
 .banner{
+    /* position: absolute;
+    z-index: 1; */
     width: 100%;
     gap: 8px;
     display: grid;
@@ -126,3 +136,35 @@ a {
     color: inherit;
 }
 
+.line-grey{
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.1);;
+}
+
+
+
+@media screen and (max-width: 1023px) {
+    .banner {
+        /* position:absolute;
+        z-index: 1; */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.4rem;
+        padding-bottom: 4px;
+
+      }
+    
+      .banner-img1 {
+        grid-row: unset;
+        grid-column: 1 / -1;
+      }
+      .banner img {
+        height: auto;
+      }
+
+      .dropDown{
+        position: absolute;
+        z-index: 10000;
+      }
+    
+}
