@@ -3,8 +3,16 @@ import './App.css';
 import BrewProducts from './BrewProducts';
 import OnlineStore from './OnlineStore';
 import { useEffect, useState } from 'react';
+import Dropdown from './common/Dropdown';
+import Stories from './Stories';
 
 function App() {
+  const [activeMenu, setActiveMenu] = useState(null);
+  const handleMenuClick = (menu) => {
+    setActiveMenu(activeMenu === menu ? null : menu); //메뉴 활성화 또는 비활성화
+  };
+
+
   const [mainImgUrl, setMainImgUrl] = useState([
     {
       lgUrl: "https://www.starbucks.co.jp/resource/kv/images/kv_250124_0600_a_pc.jpg",
@@ -34,7 +42,7 @@ function App() {
   };
 
   useEffect(() => {
-    updateImage(); // 처음 렌더링 시 이미지 업데이트
+    updateImage(); 
     window.addEventListener("resize", updateImage);
     return () => window.removeEventListener("resize", updateImage); // 리스너 제거
   }, []); // 빈 배열로 초기화 시 1회 실행
@@ -49,13 +57,13 @@ function App() {
         <div className='navi-bar'>
           <ul className='navi-bar-menu-wrap'>
             <li>
-              <button>メニュー</button>
+              <button type='button' onClick={()=>{handleMenuClick('menu')}}>メニュー</button>
             </li>
             <li>
-              <button>サービス</button>
+              <button type='button' onClick={()=>{handleMenuClick('service')}}>サービス</button>
             </li>
             <li>
-              <button>リワード</button>
+              <button type='button' onClick={()=>{handleMenuClick('reward')}}>リワード</button>
             </li>
           </ul>
           <div className='navi-bar-right-wrap'>
@@ -72,13 +80,13 @@ function App() {
           </div>
         </div>
       </div>
+         <Dropdown activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
       <div className='banner'>
         {
           mainImgUrl.map((image, i)=>{
             return(
               <a key={i} className={`banner-img${i+1}`}>
                 <img src={image.currentUrl} alt={`banner-img${i+1}`} />
-
               </a>
             )
           })
@@ -88,8 +96,10 @@ function App() {
       <div className='line-grey' />
       <OnlineStore />
       <div className='line-grey' />
-      <div>Starbucks stories</div>
+      <Stories />
+      <div className='line-grey' />
       <div>osirase</div>
+      <div className='line-grey' />
       <div>footer</div>
     </div>
   );
