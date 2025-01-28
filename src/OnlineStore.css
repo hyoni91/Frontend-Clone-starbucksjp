@@ -1,0 +1,81 @@
+.online-store{
+    padding-top: 88px;
+    letter-spacing: 1.04px;
+}
+
+
+.online-store-head > h2{
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: "SoDoSans";
+    line-height: unset;
+}
+
+.online-store-head > h4{
+    text-align: center;
+    padding-top: 16px;
+    font-size: 13px;
+    line-height: 1.75;
+    font-weight: bold;
+    font-family: "Noto Sans JP";
+}
+
+.online-store-content{
+    padding-top: 45px;
+    padding-bottom: 54px;
+    padding-left: 36px;
+    background-color: #d4e9e2;
+}
+
+.online-store-content .card{
+   background-color: white;
+   border-radius: 15px;
+   border: none;
+   height: 20em;
+   width: 152px !important; 
+   box-shadow: 2px 2px 2px rgba(186, 186, 186, 0.19), 2px 2px 2px rgba(186, 186, 186, 0.19);
+   overflow: hidden;
+
+}
+
+.online-store-content  .card > img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 45%;
+}
+
+.online-store-content .card-text{
+    font-size: 0.7em;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 7vh;
+}
+
+.online-store-content .card-price{
+    font-weight: 700;
+    text-align: left;
+    font-size: 0.9em;
+    margin: 0px;
+}
+
+.online-store-btn{
+    border: 1px solid green;
+    color: green;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 50px;
+    width: 100%;
+    padding: 5px 0 6px 0;
+    transition: all 0.2s ease;
+}
+
+.online-store-btn:hover{
+    background-color: rgb(241, 247, 241);
+}

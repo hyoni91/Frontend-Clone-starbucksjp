@@ -45,8 +45,8 @@ const BrewProducts = () => {
         dots: false,
         infinite: true,
         arrows: true,
-        centerMode: true, // 슬라이더 카드 간 여백 활성화
-        centerPadding: "10px", // 카드 간 간격 설정
+        // centerMode: true, // 슬라이더 카드 간 여백 활성화
+        startPadding: "10px", // 카드 간 간격 설정
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -86,10 +86,10 @@ const BrewProducts = () => {
                 {
                     url.map((url,i)=>{
                         return(
-                            <div className="card" >
-                                <img src={url.urlName} class="card-img-top" alt="..." />
-                                <div class="card-body">
-                                    <p class="card-text">{url.content}</p>
+                            <div className="card" key={i} >
+                                <img src={url.urlName} className="card-img-top" alt="..." />
+                                <div className="card-body">
+                                    <p className="card-text">{url.content}</p>
                                 </div>
                             </div>
                         )
