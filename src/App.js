@@ -5,6 +5,8 @@ import OnlineStore from './OnlineStore';
 import { useEffect, useState } from 'react';
 import Dropdown from './common/Dropdown';
 import Stories from './Stories';
+import Notification from './Notification';
+import Footer from './Footer';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -98,9 +100,9 @@ function App() {
       <div className='line-grey' />
       <Stories />
       <div className='line-grey' />
-      <div>osirase</div>
+      <Notification />
       <div className='line-grey' />
-      <div>footer</div>
+      <Footer />
     </div>
   );
 }
