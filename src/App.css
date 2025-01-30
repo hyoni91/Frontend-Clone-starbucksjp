@@ -33,7 +33,6 @@ button{
     background-color: #ffffff;
     font-size: 0.9em;
     font-family: noto_sansJP;
-
     align-items: center;
     padding-left: 40px;
     position: relative;
@@ -42,20 +41,22 @@ button{
 }
 
 .header > span >img{
-    width: 5vw;
-    height: 5vh;
-    margin-left: 2.5vw;
+    width: 6vw;
+    height: 6vh;
 }
 
 .navi-bar{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    height: 100%;
     align-items: center;
 }
 
+
 .navi-bar-menu-wrap{
     display: flex;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .navi-bar-menu-wrap button{
@@ -67,12 +68,9 @@ button{
 .navi-bar-right-wrap{
     display: flex;
     justify-content: space-evenly;
-    width: 40vw;
-
 }
 
 .navi-bar-right-wrap i{
-    margin-left: 1vw;
     font-weight: 600;
     font-size: 1.6em;
 }
@@ -80,22 +78,39 @@ button{
 .right-menu1{
     display: flex;
     align-items: center;
+    gap: 15px;
+    margin: 0 36px 0 0;
 }
 
 .right-menu2{
     display: flex;
-    width: 50%;
+    width: 100%;
     height: 12vh;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
 }
 
 .right-menu2 > li{
-    padding: 1vw;
+    padding: 25px;
+    width: 142px;
     height: 100%;
-    border-left: 1px solid lightgray;
+    border-left: 1px solid lightgrey;
+    text-align: center;
 }
+
+.right-menu2 > li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align:baseline;
+}
+.right-menu2 > li  img{
+    vertical-align: top;
+}
+
+
 
 .dropDown{
     position:absolute;
@@ -106,9 +121,10 @@ button{
 }
 
 .banner{
-    /* position: absolute;
-    z-index: 1; */
+    /* position: absolute; */
+    /* z-index: 1; */
     width: 100%;
+    height: auto;
     gap: 8px;
     display: grid;
     grid-template-columns: calc(50vw - 4px) calc(50vw - 4px);
@@ -147,9 +163,16 @@ a {
 
 
 @media screen and (max-width: 1023px) {
+    .header{
+        top: 0px;
+        left: 0;
+        height: 9vh;
+        background-color: #fff;
+        width: 100%;
+    }
+
+
     .banner {
-        /* position:absolute;
-        z-index: 1; */
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         gap: 0.4rem;
@@ -162,12 +185,10 @@ a {
         grid-column: 1 / -1;
       }
       .banner img {
+        width: 100%;
         height: auto;
       }
 
-      .dropDown{
-        position: absolute;
-        z-index: 10000;
-      }
+
     
 }
