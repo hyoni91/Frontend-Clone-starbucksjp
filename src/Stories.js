@@ -7,36 +7,36 @@ import 'slick-carousel/slick/slick-theme.css'
 const Stories = () => {
     const [url, setUrl] = useState([
         {
-            urlName : 'https://asset.menu.starbucks.co.jp/public/sku_images/4524785584440/4524785584440_1_s.jpg',
-            content : "[新商品情報] ルビー ショコラ シンフォニー フラペチーノ®\n\n2025.01.24"
+            urlName : 'https://www.starbucks.co.jp/top/images/stories/biomass-straw.jpg',
+            content : "スターバックスの緑のストローが帰ってきた。飲み心地が良く、地球にもポジティブに。"
         },
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/23fall2_seasonal_wb.jpg',
-            content:'季節のおすすめ商品はこちら。',
+            urlName:'	https://www.starbucks.co.jp/top/images/stories/tumbler_slogan3.jpg',
+            content:"合言葉は「タンブる」。スターバックスのタンブラー部のスローガンです。",
         },
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_porter_wb.jpg',
-            content:'弾。2つのクラフトマンシップが再び出会い、こだわり溢れるアイテムが登場します。',
+            urlName:'https://www.starbucks.co.jp/top/images/stories/hitachinakacoffeefestival2024.jpg',
+            content:"コーヒーを通じて広がる地域とのあたたかな絆。ひたちなかで見つけた新たな役割",
         },
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_egift_wb.jpg',
-            content:"[Enjoy Valentines Days eGift バレンタインまでの毎日、大切な人にeGiftを贈って楽しみませんか。",
+            urlName:'https://www.starbucks.co.jp/top/images/stories/be_a_santa_donation_report_3.jpg',
+            content:"一人ひとりが、誰かのサンタ。地域の笑顔が集う「Be a Santa ドネーション」プログラムのご報告",
         }, 
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_cafe_wb.jpg',
-            content:'[新商品情報] クラシック ショコラ シンフォニー フラペチーノ®',
+            urlName:'https://www.starbucks.co.jp/top/images/stories/family_friendly_store.jpg',
+            content:"「子どもも家族も楽しい」を叶える、スターバックスの新しいかたち。HIROBA -ひろば-の魅力とは？",
         }, 
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_gift_wb.jpg',
-            content:'[バレンタインギフト特集] 選ぶ時間も渡す瞬間もずっとワクワクが続く、スターバックスのバレンタインギフトをお楽しみください。',
+            urlName:'https://www.starbucks.co.jp/top/images/stories/tumbler_summit.png',
+            content:"タンブラー部「学生サミット」！使い捨てない未来を考えてみた！",
         }, 
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_name-engraving_wb.jpg',
-            content:'あなたの気持ちを刻印メッセージで届ける、オンリーワンのバレンタインデーギフトを贈りませんか。',
+            urlName:'https://www.starbucks.co.jp/top/images/stories/store_design_and_careers.jpeg',
+            content:"地域に溶け込むスターバックスの店舗づくり。東急歌舞伎町タワー店ができ上がるまで。",
         }, 
         {
-            urlName:'https://www.starbucks.co.jp/assets/images/web2/images/wb/images/25Winter2_hellocoffee_wb.jpg',
-            content:'コアコーヒー4種類に100gサイズのコーヒー(粉)が登場',
+            urlName:'https://www.starbucks.co.jp/top/images/stories/kawachinagano202411.jpg',
+            content:"店舗の植栽を“小さなまちの森”に…。鎮守の森から譲り受けた実生苗",
         }, 
     ])
 
@@ -78,10 +78,14 @@ const Stories = () => {
     };
 
     return (
-        <div>
-            <div>Stories</div>
-            <div>link</div>
-            <Slider {...settings} className='slider-wrap'>
+        <div className='stories'>
+            <div className='stories-header'>
+                <img src='https://www.starbucks.co.jp/top/images/STORIES%20logo.png' alt='stories.logo'/>
+                <a className='stories-link'>
+                一覧へ <span> <i className="bi bi-box-arrow-up-right" /></span>
+                </a>
+            </div>
+            <Slider {...settings} className='stories-slider-wrap'>
                 {
                     url.map((url,i)=>{
                         return(

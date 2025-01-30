@@ -82,7 +82,7 @@ const BrewProducts = () => {
         
         <div className='brew-products'>
             <h2>WHAT'S BREWING</h2>
-            <Slider {...settings} className='slider-wrap'>
+            <Slider {...settings} className='brew-slider-wrap'>
                 {
                     url.map((url,i)=>{
                         return(

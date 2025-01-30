@@ -25,6 +25,13 @@ const Dropdown = ({activeMenu, setActiveMenu}) => {
             </div>
           
           )}
+          {
+            activeMenu === 'search' &&(
+              <div className='dropDown'>
+              <h2>search</h2>
+            </div> 
+            )
+          }
         </div>
     );
 };

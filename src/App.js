@@ -5,6 +5,9 @@ import OnlineStore from './OnlineStore';
 import { useEffect, useState } from 'react';
 import Dropdown from './common/Dropdown';
 import Stories from './Stories';
+import Notification from './Notification';
+import Footer from './Footer';
+import MainMenuBar from './common/MainMenuBar';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -50,9 +53,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className='header'>
+      <MainMenuBar handleMenuClick={handleMenuClick}/>
+      {/* <div className='header'>
         <span>
-          <img url='/images/logo.svg' />
+          <img src='https://d3vgbguy0yofad.cloudfront.net/common/images/header/logo.svg' />
         </span>
         <div className='navi-bar'>
           <ul className='navi-bar-menu-wrap'>
@@ -74,12 +78,12 @@ function App() {
               <li><button><i className="bi bi-cart-fill"></i></button></li>
             </ul>
             <ul className='right-menu2'>
-              <li><a>starbuck Stories</a></li>
-              <li><a>starbuck reverse</a></li>
+              <li><a><img src='https://d3vgbguy0yofad.cloudfront.net/common/images/header/logo_stories.svg'/></a></li>
+              <li><a><img src='	https://d3vgbguy0yofad.cloudfront.net/common/images/header/logo_reserve.svg'/></a></li>
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
          <Dropdown activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
       <div className='banner'>
         {
@@ -98,9 +102,9 @@ function App() {
       <div className='line-grey' />
       <Stories />
       <div className='line-grey' />
-      <div>osirase</div>
+      <Notification />
       <div className='line-grey' />
-      <div>footer</div>
+      <Footer />
     </div>
   );
 }
