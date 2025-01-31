@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <footer className='footer-page'>
             <div className='footer-nav-wrap'>
@@ -74,4 +74,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default Footer; 
